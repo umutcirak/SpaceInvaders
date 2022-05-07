@@ -6,9 +6,9 @@ using UnityEngine;
 public class Health : MonoBehaviour
 {
     [Header("General")]
-    [SerializeField] int health = 50;
-    [SerializeField] ParticleSystem hitEffect;
+    [SerializeField] int health = 50;    
     [SerializeField] bool isPlayer;
+    [SerializeField] ParticleSystem hitEffect;
 
     [Header("Player Settings")]
     [SerializeField] bool applyCameraShake; // Don't use for AI
@@ -28,7 +28,7 @@ public class Health : MonoBehaviour
     void Start()
     {
         
-    }
+    }  
 
 
     void OnTriggerEnter2D(Collider2D other)
@@ -78,5 +78,10 @@ public class Health : MonoBehaviour
     {
         ParticleSystem instance = Instantiate(hitEffect, transform.position, Quaternion.identity);
         Destroy(instance.gameObject, instance.main.duration + instance.main.startLifetime.constantMax);
+    }
+
+    public int GetHealth()
+    {
+        return health;
     }
 }

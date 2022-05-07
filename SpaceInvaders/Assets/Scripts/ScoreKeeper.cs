@@ -21,12 +21,12 @@ public class ScoreKeeper : MonoBehaviour
 
     public void ModifyScore()
     {
-        score += damageScore * scoreMultiplier;
+        score += damageScore * scoreMultiplier;       
     }
 
     public void ModifyScoreKill()
     {
-        score += killScore * scoreMultiplier;
+        score += killScore * scoreMultiplier;        
     }
 
     public void ResetScore()
