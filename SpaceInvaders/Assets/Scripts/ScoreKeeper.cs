@@ -16,9 +16,7 @@ public class ScoreKeeper : MonoBehaviour
     void Awake()
     {
         ManageSingleton();
-    }
-
-    
+    }    
 
     void ManageSingleton()
     {

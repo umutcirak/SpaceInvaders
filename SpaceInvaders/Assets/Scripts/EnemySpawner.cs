@@ -6,20 +6,25 @@ public class EnemySpawner : MonoBehaviour
 {    
     [SerializeField] List<WaveConfigSO> waveConfigs;
     [SerializeField] float timeBetweenWaves;
+    [SerializeField] int repeatWave;
+
     WaveConfigSO currentWave;
+    LevelManager levelManager;
+          
 
     void Awake()
     {
-        currentWave = waveConfigs[0];
+        //currentWave = waveConfigs[0];
+        levelManager = FindObjectOfType<LevelManager>();
     }
     void Start()
     {        
-        StartCoroutine(SpawnEnemyWaves());
+        StartCoroutine(SpawnEnemyWaves());        
     }
 
     IEnumerator SpawnEnemyWaves()
     {
-        while (true)
+        for(int x = 0; x < repeatWave; x++)
         {
             foreach (WaveConfigSO wave in waveConfigs)
             {
@@ -34,9 +39,8 @@ public class EnemySpawner : MonoBehaviour
                 }
                 yield return new WaitForSeconds(timeBetweenWaves);
             }
-
-        }
-
+        }        
+        levelManager.LoadNextLevel();
     }
 
     public WaveConfigSO getCurrentWave()

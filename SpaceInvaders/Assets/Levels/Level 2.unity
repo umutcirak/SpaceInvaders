@@ -533,8 +533,20 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2078917395736398266, guid: c8211e9e5fe43fa48b9a9f4629a5ad57, type: 3}
       propertyPath: repeatWave
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 2078917395736398266, guid: c8211e9e5fe43fa48b9a9f4629a5ad57, type: 3}
+      propertyPath: timeBetweenWaves
+      value: 0.65
+      objectReference: {fileID: 0}
+    - target: {fileID: 2078917395736398266, guid: c8211e9e5fe43fa48b9a9f4629a5ad57, type: 3}
+      propertyPath: waveConfigs.Array.data[0]
+      value: 
+      objectReference: {fileID: 11400000, guid: 127c053dc0369f4448d5fcac9b1a0b1a, type: 2}
+    - target: {fileID: 2078917395736398266, guid: c8211e9e5fe43fa48b9a9f4629a5ad57, type: 3}
+      propertyPath: waveConfigs.Array.data[1]
+      value: 
+      objectReference: {fileID: 11400000, guid: 79d4f35fdcf31ad4c871dd195305303e, type: 2}
     - target: {fileID: 2078917395736398267, guid: c8211e9e5fe43fa48b9a9f4629a5ad57, type: 3}
       propertyPath: m_Name
       value: EnemySpawner
@@ -670,10 +682,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 8983750763962278373, guid: 1fcf17b035b614642b6f6c293e73a17e, type: 3}
-      propertyPath: m_text
-      value: 'LEVEL: XXX'
-      objectReference: {fileID: 0}
     - target: {fileID: 8983750764039037759, guid: 1fcf17b035b614642b6f6c293e73a17e, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0

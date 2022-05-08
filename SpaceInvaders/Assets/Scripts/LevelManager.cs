@@ -40,6 +40,26 @@ public class LevelManager : MonoBehaviour
         yield return new WaitForSeconds(delay);
         SceneManager.LoadScene(sceneName);
     }
+    IEnumerator WaitAndLoad(int sceneIndex)
+    {
+        yield return new WaitForSeconds(delay);
+        SceneManager.LoadScene(sceneIndex);
+    }
+
+    public void LoadNextLevel()
+    {
+        int currentLevel = SceneManager.GetActiveScene().buildIndex;
+
+        if(currentLevel == SceneManager.sceneCountInBuildSettings - 2)
+        {
+            LoadGameOverMenu();
+        }
+        else
+        {
+            WaitAndLoad(currentLevel + 1);
+        }
+
+    }
 
 
 }

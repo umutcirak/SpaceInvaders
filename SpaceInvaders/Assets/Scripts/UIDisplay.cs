@@ -14,6 +14,9 @@ public class UIDisplay : MonoBehaviour
     [SerializeField] TextMeshProUGUI scoreText;
     ScoreKeeper scoreKeeper;
 
+    [Header("Level")]
+    [SerializeField] TextMeshProUGUI levelText;
+
     void Awake()
     {
         scoreKeeper = FindObjectOfType<ScoreKeeper>();
@@ -34,5 +37,6 @@ public class UIDisplay : MonoBehaviour
     {
         healthSlider.value = playerHealth.GetHealth();
         scoreText.text = "" + scoreKeeper.GetScore();
+        levelText.text = "Level: " + UnityEngine.SceneManagement.SceneManager.GetActiveScene().buildIndex; 
     }
 }
