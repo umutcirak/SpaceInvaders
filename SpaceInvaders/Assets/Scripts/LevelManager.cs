@@ -5,24 +5,31 @@ using UnityEngine.SceneManagement;
 
 public class LevelManager : MonoBehaviour
 {
+    [SerializeField] float delay = 1f;
     
     public void LoadGame()
-    {
-        SceneManager.LoadScene("Level 1");
+    {        
+        StartCoroutine(WaitAndLoad("Level 1"));
     }
     public void LoadMainMenu()
-    {
-        SceneManager.LoadScene("MainMenu");
+    {        
+        StartCoroutine(WaitAndLoad("MainMenu"));
     }
 
     public void LoadGameOverMenu()
-    {
-        SceneManager.LoadScene("GameOver Menu");
+    {        
+        StartCoroutine(WaitAndLoad("GameOver Menu"));
     }
 
     public void QuitGame()
     {
         Application.Quit();
+    }
+
+    IEnumerator WaitAndLoad(string sceneName)
+    {
+        yield return new WaitForSeconds(delay);
+        SceneManager.LoadScene(sceneName);
     }
 
 
