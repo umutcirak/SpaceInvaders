@@ -47,5 +47,5 @@ MonoBehaviour:
   waveConfigs:
   - {fileID: 11400000, guid: 2adf15252ed0e054a85155d36e61f686, type: 2}
   - {fileID: 11400000, guid: c4e7f20a966d9e2428d9e686d80ed9e3, type: 2}
-  timeBetweenWaves: 1.5
-  repeatWave: 10
+  timeBetweenWaves: 0.65
+  repeatWave: 1

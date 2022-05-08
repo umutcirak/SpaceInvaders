@@ -8,12 +8,14 @@ public class LevelManager : MonoBehaviour
     [SerializeField] float delay = 1f;
 
     ScoreKeeper scoreKeeper;
+   
 
     private void Awake()
     {
-        scoreKeeper = FindObjectOfType<ScoreKeeper>();
-    }
+        scoreKeeper = FindObjectOfType<ScoreKeeper>();        
+    }   
 
+   
 
     public void LoadGame()
     {
@@ -22,13 +24,30 @@ public class LevelManager : MonoBehaviour
     }
     public void LoadMainMenu()
     {        
-        StartCoroutine(WaitAndLoad("MainMenu"));
+        StartCoroutine(WaitAndLoad(0));
     }
 
     public void LoadGameOverMenu()
     {        
         StartCoroutine(WaitAndLoad("GameOver Menu"));
     }
+
+    public void LoadNextLevel()
+    {
+        int currentScene = SceneManager.GetActiveScene().buildIndex;
+        //Debug.Log(currentScene);
+        //Debug.Log(SceneManager.sceneCountInBuildSettings);
+
+        if (currentScene <= SceneManager.sceneCountInBuildSettings - 2)
+        {            
+            SceneManager.LoadScene(currentScene + 1);
+        }
+        else
+        {
+            SceneManager.LoadScene("GameOver Menu");
+        }
+    }    
+           
 
     public void QuitGame()
     {
@@ -46,20 +65,7 @@ public class LevelManager : MonoBehaviour
         SceneManager.LoadScene(sceneIndex);
     }
 
-    public void LoadNextLevel()
-    {
-        int currentLevel = SceneManager.GetActiveScene().buildIndex;
-
-        if(currentLevel == SceneManager.sceneCountInBuildSettings - 2)
-        {
-            LoadGameOverMenu();
-        }
-        else
-        {
-            WaitAndLoad(currentLevel + 1);
-        }
-
-    }
+    
 
 
 }

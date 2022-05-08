@@ -10,16 +10,23 @@ public class EnemySpawner : MonoBehaviour
 
     WaveConfigSO currentWave;
     LevelManager levelManager;
-          
 
-    void Awake()
+
+    private void Awake()
     {
-        //currentWave = waveConfigs[0];
         levelManager = FindObjectOfType<LevelManager>();
     }
     void Start()
-    {        
-        StartCoroutine(SpawnEnemyWaves());        
+    {
+        SpawnWaves();        
+    }
+
+    
+
+    void SpawnWaves()
+    {
+        StartCoroutine(SpawnEnemyWaves());       
+        
     }
 
     IEnumerator SpawnEnemyWaves()
@@ -39,7 +46,8 @@ public class EnemySpawner : MonoBehaviour
                 }
                 yield return new WaitForSeconds(timeBetweenWaves);
             }
-        }        
+        }
+        yield return new WaitForSeconds(4);
         levelManager.LoadNextLevel();
     }
 
