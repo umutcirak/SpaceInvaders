@@ -132,7 +132,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6e94ad5d7ce0f7e4ca8eb73ee7101e20, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  movementSpeed: 5
+  movementSpeed: 15
   paddingTop: 10
   paddingBottom: 1
   paddingLeft: 1
@@ -205,7 +205,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   projectilePrefab: {fileID: 6452191463668846812, guid: 9d181048cef3c7040b147cf74d719138, type: 3}
   projectileSpeed: 10
-  projectileLifeTime: 5
+  projectileLifeTime: 2
   firingRate: 0.1
   minFiringRateAI: 1
   firingTimeVarienceAI: 0.65

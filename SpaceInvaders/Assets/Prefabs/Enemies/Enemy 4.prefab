@@ -132,8 +132,8 @@ MonoBehaviour:
   projectileSpeed: 10
   projectileLifeTime: 5
   firingRate: 0.3
-  minFiringRateAI: 0.4
-  firingTimeVarienceAI: 0.65
+  minFiringRateAI: 0.6
+  firingTimeVarienceAI: 0.4
   useAI: 1
   isFiring: 0
 --- !u!1 &7877945314480197695

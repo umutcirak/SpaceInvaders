@@ -303,7 +303,7 @@ MonoBehaviour:
   projectileLifeTime: 5
   firingRate: 0.3
   minFiringRateAI: 0.25
-  firingTimeVarienceAI: 0.65
+  firingTimeVarienceAI: 0.3
   useAI: 1
   isFiring: 0
 --- !u!1 &5526806458680285383
