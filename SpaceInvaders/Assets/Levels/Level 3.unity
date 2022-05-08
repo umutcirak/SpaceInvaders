@@ -713,6 +713,10 @@ PrefabInstance:
       propertyPath: playerHealth
       value: 
       objectReference: {fileID: 1901428285}
+    - target: {fileID: 8983750764711872714, guid: 1fcf17b035b614642b6f6c293e73a17e, type: 3}
+      propertyPath: m_MatchWidthOrHeight
+      value: 0.486
+      objectReference: {fileID: 0}
     - target: {fileID: 8983750764711872716, guid: 1fcf17b035b614642b6f6c293e73a17e, type: 3}
       propertyPath: m_Name
       value: UI
