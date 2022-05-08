@@ -9,6 +9,32 @@ public class ScoreKeeper : MonoBehaviour
     [SerializeField] int scoreMultiplier = 10;
     [SerializeField] int damageScore = 10;
     [SerializeField] int killScore = 250;
+
+
+    static ScoreKeeper instance;
+
+    void Awake()
+    {
+        ManageSingleton();
+    }
+
+    
+
+    void ManageSingleton()
+    {
+        
+        if(instance != null)
+        {
+            gameObject.SetActive(false);
+            Destroy(gameObject);
+        }
+        else
+        {
+            instance = this;
+            DontDestroyOnLoad(gameObject);
+        }
+    }
+
     void Start()
     {
         score = 0;
